@@ -1,0 +1,178 @@
+@font-face {
+  font-family: Fraunces;
+  src: url(../fonts/fraunces.woff2) format('woff2');
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Fraunces;
+  src: url(../fonts/fraunces-italic.woff2) format('woff2');
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+:root {
+  color-scheme: light dark;
+
+  &:has(meta[name='color-scheme'][content='light']) {
+    color-scheme: light;
+  }
+  &:has(meta[name='color-scheme'][content='dark']) {
+    color-scheme: dark;
+  }
+
+  --paper: light-dark(#f4efe6, #0a1a24);
+  --surface: light-dark(#fffdf8, #11262f);
+  --ink: light-dark(#0f2530, #eaf2f0);
+  --muted: light-dark(#52646b, #98adb5);
+  --line: color-mix(in oklab, var(--ink) 15%, transparent);
+  --accent: light-dark(#c2401a, #ff8a5c);
+  --sea: light-dark(#2a86a0, #2b8199);
+  --sea-deep: light-dark(#125872, #124a60);
+  --sand: light-dark(#e3d3b4, #3b4a48);
+
+  --horizon: color-mix(in oklab, light-dark(var(--accent), var(--sea)) 24%, var(--paper));
+
+  --display: Fraunces, Georgia, serif;
+  --text: system-ui, sans-serif;
+
+  --step-small: 0.875rem;
+  --step-1: clamp(1.25rem, 1.1rem + 0.7vw, 1.6rem);
+  --step-2: clamp(1.8rem, 1.4rem + 2vw, 3rem);
+  --step-3: clamp(2.8rem, 1.6rem + 6.5vw, 7rem);
+
+  --gap: clamp(1rem, 0.6rem + 1.6vw, 2rem);
+  --gutter: max(clamp(1.25rem, 5vw, 4rem), (100vw - 76rem) / 2);
+  --section: clamp(4rem, 10vw, 8rem);
+  --radius: 1.25rem;
+
+  font-family: var(--text);
+  line-height: 1.55;
+  color: var(--ink);
+  background: var(--paper);
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+ol,
+dl,
+dd,
+figure,
+fieldset {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+fieldset {
+  border: 0;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--display);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: var(--step-3);
+}
+h2 {
+  font-size: var(--step-2);
+}
+h3 {
+  font-size: var(--step-1);
+}
+
+p {
+  text-wrap: pretty;
+}
+
+a {
+  color: inherit;
+  text-underline-offset: 0.2em;
+  text-decoration-thickness: 1px;
+}
+
+button,
+select,
+input {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  @view-transition {
+    navigation: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    scroll-behavior: auto;
+  }
+
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none;
+  }
+}
