@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <script>
+      document.querySelector('meta[name="color-scheme"]').content = localStorage.getItem('theme') ?? 'light dark';
+    </script>
+
+    <title>Vaga · Live surf conditions for the Portuguese coast</title>
+    <meta
+      name="description"
+      content="Live waves and wind for eight surf spots along the Portuguese coast, from Porto to Sagres."
+    />
+    <link rel="icon" href="images/favicon.svg" />
+
+    <link rel="preload" href="fonts/fraunces.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/home.css" />
+
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="logo" href="./" aria-label="Vaga, home">
+        <svg viewBox="0 0 32 20" aria-hidden="true"><path d="M2 14c5 0 5-8 10-8s5 8 10 8 5-8 8-8" /></svg>
+        Vaga
+      </a>
+      <nav>
+        <a href="#spots">Spots</a>
+        <a href="#guide">Reading the sea</a>
+      </nav>
+      <button class="theme-toggle" type="button" aria-label="Switch between light and dark theme">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path
+            class="sun"
+            d="M12 3v2m0 14v2M3 12h2m14 0h2M5.6 5.6 7 7m10 10 1.4 1.4M5.6 18.4 7 17M17 7l1.4-1.4M16 12a4 4 0 1 1-8 0 4 4 0 0 1 8 0z"
+          />
+          <path class="moon" d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z" />
+        </svg>
+      </button>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-text">
+          <p class="eyebrow"><span class="live-dot"></span> Live from the Atlantic</p>
+          <h1>The Portuguese coast, <em>wave by wave.</em></h1>
+          <p class="lead">Swell and wind, hour by hour, for eight surf spots between Porto and Sagres.</p>
+          <a class="highlight" href="#spots" hidden>
+            <span>Biggest right now</span>
+            <strong class="highlight-name"></strong>
+            <span class="highlight-waves"></span>
+          </a>
+        </div>
+        <div class="sea" aria-hidden="true"><i></i><i></i><i></i></div>
+      </section>
+
+      <section class="spots" id="spots">
+        <header class="section-header">
+          <h2>The spots</h2>
+        </header>
+
+        <p class="notice" role="status"></p>
+        <ul class="spot-list"></ul>
+
+        <template id="spot-card">
+          <li class="spot-card">
+            <a class="spot-link">
+              <img class="spot-photo" width="640" height="427" loading="lazy" />
+              <div class="spot-summary">
+                <p class="spot-place"></p>
+                <h3 class="spot-name"></h3>
+                <p class="rating"></p>
+                <dl class="numbers">
+                  <div>
+                    <dt>Waves</dt>
+                    <dd class="waves"></dd>
+                  </div>
+                  <div>
+                    <dt>Period</dt>
+                    <dd class="period"></dd>
+                  </div>
+                  <div>
+                    <dt>Wind</dt>
+                    <dd class="wind"></dd>
+                  </div>
+                </dl>
+              </div>
+            </a>
+          </li>
+        </template>
+      </section>
+
+      <section class="guide" id="guide">
+        <header class="section-header">
+          <h2>Reading the sea</h2>
+          <p>
+            Three numbers decide whether a session is worth the drive. Vaga combines them into one rating, from Flat to
+            Epic.
+          </p>
+        </header>
+
+        <ol class="lessons">
+          <li>
+            <svg viewBox="0 0 120 60" aria-hidden="true">
+              <path d="M4 46c14 0 14-32 28-32s14 32 28 32 14-32 28-32 14 32 28 32" />
+              <path class="measure" d="M32 14v32m-5-32h10m-10 32h10" />
+            </svg>
+            <h3>Height</h3>
+            <p>
+              How tall the waves are out at sea, in metres. Under half a metre the sea is flat. Past three metres, most
+              beaches are for experts only.
+            </p>
+          </li>
+          <li>
+            <svg viewBox="0 0 120 60" aria-hidden="true">
+              <path d="M4 46c14 0 14-32 28-32s14 32 28 32 14-32 28-32 14 32 28 32" />
+              <path class="measure" d="M32 8h56m-56-5v10m56-10v10" />
+            </svg>
+            <h3>Period</h3>
+            <p>
+              The seconds between one crest and the next. A long period means the swell travelled far, so its waves
+              arrive tidy and carry more power.
+            </p>
+          </li>
+          <li>
+            <svg viewBox="0 0 120 60" aria-hidden="true">
+              <path d="M4 50c20 0 30-8 40-36 6 18 4 30-6 36h78" />
+              <path class="measure" d="M112 22H66m10-8-10 8 10 8" />
+            </svg>
+            <h3>Wind</h3>
+            <p>
+              Offshore wind blows from the land and holds the face of the wave up. Onshore wind blows from the sea and
+              crumbles it. No wind at all is called glassy.
+            </p>
+          </li>
+        </ol>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>
+        Forecasts by <a href="https://open-meteo.com">Open-Meteo</a>, under CC BY 4.0. Photos from
+        <a href="https://commons.wikimedia.org">Wikimedia Commons</a>, credited on the page of each spot.
+      </p>
+      <p>The ratings are a rough guide. Always look at the sea before you paddle out.</p>
+    </footer>
+  </body>
+</html>
