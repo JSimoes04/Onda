@@ -1,0 +1,146 @@
+[
+  {
+    "id": "matosinhos",
+    "name": "Matosinhos",
+    "town": "Porto",
+    "region": "North",
+    "latitude": 41.18,
+    "longitude": -8.71,
+    "faces": 240,
+    "break": "Beach break",
+    "level": "All levels",
+    "description": "Porto's city beach. The Leixões harbour wall takes the edge off the Atlantic, which leaves gentle, forgiving waves and makes this the classroom of the north.",
+    "photo": {
+      "alt": "A surfer rides a small wave at Matosinhos, with the cruise terminal behind",
+      "author": "Bex Walton",
+      "license": "CC BY 2.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Surfer_on_Matosinhos_beach_(51705869637).jpg"
+    }
+  },
+  {
+    "id": "cabedelo",
+    "name": "Cabedelo",
+    "town": "Figueira da Foz",
+    "region": "Centre",
+    "latitude": 40.14,
+    "longitude": -8.9,
+    "faces": 280,
+    "break": "Right-hand jetty break",
+    "level": "Intermediate",
+    "description": "On the south bank of the Mondego river mouth, the jetty shapes one of the longest right-handers in the country. The closest good wave to Coimbra.",
+    "photo": {
+      "alt": "Sunset over the wet sand and the breaking waves of Cabedelo",
+      "author": "Telmo Pedrosa",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Praia_do_Cabedelo_na_Figueira_da_Foz.jpg"
+    }
+  },
+  {
+    "id": "nazare",
+    "name": "Praia do Norte",
+    "town": "Nazaré",
+    "region": "Centre",
+    "latitude": 39.61,
+    "longitude": -9.1,
+    "faces": 290,
+    "break": "Big-wave beach break",
+    "level": "Experts only",
+    "description": "An underwater canyon points straight at this beach and stacks winter swells into the biggest waves ever surfed. Most people watch from the lighthouse.",
+    "photo": {
+      "alt": "A crowd on the Nazaré lighthouse fort watches a giant wave break",
+      "author": "Luis Ascenso",
+      "license": "CC BY 2.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Praia_do_Norte,Nazaré_-23_(50655732078).jpg"
+    }
+  },
+  {
+    "id": "supertubos",
+    "name": "Supertubos",
+    "town": "Peniche",
+    "region": "Centre",
+    "latitude": 39.34,
+    "longitude": -9.37,
+    "faces": 235,
+    "break": "Barrelling beach break",
+    "level": "Advanced",
+    "description": "Fast, hollow and heavy over a shallow sandbank. The world tour stops here every year, and the name tells you what everyone comes for.",
+    "photo": {
+      "alt": "A professional surfer launches off the lip of a wave at Supertubos",
+      "author": "Luis Ascenso",
+      "license": "CC BY 2.0",
+      "source": "https://commons.wikimedia.org/wiki/File:2018_WSL_Rip_Curl_(45401318242).jpg"
+    }
+  },
+  {
+    "id": "ribeira-dilhas",
+    "name": "Ribeira d'Ilhas",
+    "town": "Ericeira",
+    "region": "Lisbon",
+    "latitude": 38.99,
+    "longitude": -9.43,
+    "faces": 285,
+    "break": "Right-hand point break",
+    "level": "Intermediate",
+    "description": "A long right-hander peeling over flat reef, at the heart of Europe's first World Surfing Reserve. Consistent all year and rarely empty.",
+    "photo": {
+      "alt": "Lines of swell wrap around the reef at Ribeira d'Ilhas, seen from the cliff",
+      "author": "Adamina",
+      "license": "CC BY 2.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Ribeira_d'Ilhas,_Ericeira_DSCN0668_(26277387673).jpg"
+    }
+  },
+  {
+    "id": "carcavelos",
+    "name": "Carcavelos",
+    "town": "Cascais",
+    "region": "Lisbon",
+    "latitude": 38.67,
+    "longitude": -9.33,
+    "faces": 200,
+    "break": "Beach break",
+    "level": "All levels",
+    "description": "Lisbon's home break, a short train ride from the city. It faces south, so the prevailing north wind blows offshore and grooms the winter swells.",
+    "photo": {
+      "alt": "Surfers on a breaking wave at Carcavelos under a pastel sunset sky",
+      "author": "Sonse",
+      "license": "CC BY 2.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Surfers_at_Sunset_on_Praia_de_Carcavelos_•_Carcavelos_beach_(50662668941).jpg"
+    }
+  },
+  {
+    "id": "arrifana",
+    "name": "Arrifana",
+    "town": "Aljezur",
+    "region": "Algarve",
+    "latitude": 37.29,
+    "longitude": -8.88,
+    "faces": 265,
+    "break": "Beach and point break",
+    "level": "All levels",
+    "description": "A crescent bay tucked under the cliffs of the Costa Vicentina. Mellow waves on the sand, and a serious right-hander off the point when a big swell arrives.",
+    "photo": {
+      "alt": "The bay of Arrifana and its headland at dusk",
+      "author": "Geerd-Olaf Freyer",
+      "license": "CC BY-SA 2.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Praia_da_Arrifana_(6154747357).jpg"
+    }
+  },
+  {
+    "id": "tonel",
+    "name": "Tonel",
+    "town": "Sagres",
+    "region": "Algarve",
+    "latitude": 37.0,
+    "longitude": -8.96,
+    "faces": 270,
+    "break": "Beach break",
+    "level": "Intermediate",
+    "description": "Beside the fortress of Sagres, at the south-western tip of Europe. Open to every westerly swell, so there is a wave here when the south coast is flat.",
+    "photo": {
+      "alt": "Foam runs up the sand at Tonel beach, below the orange cliffs of Sagres",
+      "author": "dronepicr",
+      "license": "CC BY 2.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Strand_Praia_do_Tonel_Sagres_(27433695660).jpg"
+    }
+  }
+]
