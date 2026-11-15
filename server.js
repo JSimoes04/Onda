@@ -30,11 +30,18 @@ async function serveFile(request, response) {
 }
 
 function main() {
+  stopOnSignal('SIGINT');
+  stopOnSignal('SIGTERM');
+
   const server = createServer(serveFile);
   server.on('error', reportStartupError);
   server.listen(PORT, () => {
     console.log(`Vaga is running at http://localhost:${PORT}`);
   });
+}
+
+function stopOnSignal(signal) {
+  process.on(signal, () => process.exit());
 }
 
 function reportStartupError(error) {
