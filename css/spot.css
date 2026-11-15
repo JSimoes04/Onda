@@ -57,6 +57,43 @@
   }
 }
 
+.save {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.2rem 0.6rem 1rem;
+  font-weight: 600;
+  color: #06141c;
+  background: #f6f2ea;
+  border: 0;
+  border-radius: 2rem;
+  transition: scale 0.15s;
+
+  &:active {
+    scale: 0.95;
+  }
+
+  svg {
+    width: 1.1rem;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linejoin: round;
+    transition: fill 0.2s;
+  }
+
+  &[aria-pressed='true'] svg {
+    fill: currentColor;
+    animation: pop 0.4s ease-out;
+  }
+}
+
+@keyframes pop {
+  50% {
+    scale: 1.4;
+  }
+}
+
 .credit {
   position: absolute;
   right: var(--gutter);

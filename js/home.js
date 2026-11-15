@@ -1,5 +1,6 @@
 import { fetchSpots, fetchForecasts } from './api.js';
 import { currentHour, rate, windType } from './surf.js';
+import { isSaved } from './saved.js';
 import { showRating, stirSea } from './ui.js';
 
 const list = document.querySelector('.spot-list');
@@ -64,7 +65,7 @@ function showBiggest(spot) {
 
 function arrange(spots) {
   const { region, order } = Object.fromEntries(new FormData(controls));
-  const matches = (spot) => region === 'All' || region === spot.region;
+  const matches = (spot) => region === 'All' || region === spot.region || (region === 'Saved' && isSaved(spot));
 
   const update = () => {
     for (const spot of spots.toSorted(orders[order])) {
@@ -75,6 +76,10 @@ function arrange(spots) {
 
   if (document.startViewTransition) document.startViewTransition(update);
   else update();
+
+  notice.textContent = spots.some(matches)
+    ? ''
+    : 'No saved spots yet. Open a spot and press “Save spot” to keep it here.';
 }
 
 main();

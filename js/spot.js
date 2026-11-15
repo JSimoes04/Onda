@@ -1,10 +1,12 @@
 import { fetchSpots, fetchForecasts } from './api.js';
 import { currentHour, rate, windType, compassPoint, formatMoment } from './surf.js';
+import { isSaved, toggleSaved } from './saved.js';
 import { showRating, stirSea } from './ui.js';
 import './wave-chart.js';
 
 const chart = document.querySelector('wave-chart');
 const backToNow = document.querySelector('.back-to-now');
+const saveButton = document.querySelector('.save');
 
 async function main() {
   const spots = await fetchSpots();
@@ -49,6 +51,14 @@ function showSpot(spot) {
   write('.credit-link', `${spot.photo.author}, ${spot.photo.license}`);
   document.querySelector('.credit-link').href = spot.photo.source;
   document.querySelector('.compass').style.setProperty('--faces', `${spot.faces}deg`);
+
+  showSaved(isSaved(spot));
+  saveButton.addEventListener('click', () => showSaved(toggleSaved(spot)));
+}
+
+function showSaved(saved) {
+  saveButton.setAttribute('aria-pressed', saved);
+  write('.save-label', saved ? 'Saved' : 'Save spot');
 }
 
 function showNeighbours(spots, spot) {
