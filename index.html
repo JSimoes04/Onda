@@ -62,6 +62,24 @@
       <section class="spots" id="spots">
         <header class="section-header">
           <h2>The spots</h2>
+          <form class="controls">
+            <fieldset class="chips">
+              <legend class="visually-hidden">Show the spots of</legend>
+              <label><input type="radio" name="region" value="All" checked /> All</label>
+              <label><input type="radio" name="region" value="North" /> North</label>
+              <label><input type="radio" name="region" value="Centre" /> Centre</label>
+              <label><input type="radio" name="region" value="Lisbon" /> Lisbon</label>
+              <label><input type="radio" name="region" value="Algarve" /> Algarve</label>
+            </fieldset>
+            <label class="sort">
+              Sort by
+              <select name="order">
+                <option value="coast">North to south</option>
+                <option value="waves">Biggest waves</option>
+                <option value="rating">Best conditions</option>
+              </select>
+            </label>
+          </form>
         </header>
 
         <p class="notice" role="status"></p>

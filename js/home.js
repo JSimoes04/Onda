@@ -3,6 +3,7 @@ import { currentHour, rate, windType } from './surf.js';
 import { showRating, stirSea } from './ui.js';
 
 const list = document.querySelector('.spot-list');
+const controls = document.querySelector('.controls');
 const notice = document.querySelector('.notice');
 const template = document.querySelector('#spot-card');
 
@@ -21,6 +22,7 @@ async function main() {
     spots.forEach((spot, i) => showConditions(spot, currentHour(forecasts[i])));
 
     showBiggest(spots.toSorted(orders.waves)[0]);
+    controls.addEventListener('change', () => arrange(spots));
   } catch {
     notice.textContent = 'The forecast could not be loaded. Check your connection and reload the page.';
   }
@@ -58,6 +60,21 @@ function showBiggest(spot) {
   highlight.hidden = false;
 
   stirSea(document.querySelector('.sea'), spot.now);
+}
+
+function arrange(spots) {
+  const { region, order } = Object.fromEntries(new FormData(controls));
+  const matches = (spot) => region === 'All' || region === spot.region;
+
+  const update = () => {
+    for (const spot of spots.toSorted(orders[order])) {
+      spot.card.hidden = !matches(spot);
+      list.append(spot.card);
+    }
+  };
+
+  if (document.startViewTransition) document.startViewTransition(update);
+  else update();
 }
 
 main();
