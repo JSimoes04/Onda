@@ -36,7 +36,7 @@ function main() {
   const server = createServer(serveFile);
   server.on('error', reportStartupError);
   server.listen(PORT, () => {
-    console.log(`Vaga is running at http://localhost:${PORT}`);
+    console.log(`Onda is running at http://localhost:${PORT}`);
   });
 }
 
