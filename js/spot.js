@@ -36,7 +36,7 @@ function write(selector, text) {
 }
 
 function showSpot(spot) {
-  document.title = `${spot.name}, ${spot.town} · Vaga`;
+  document.title = `${spot.name}, ${spot.town} · Onda`;
 
   const photo = document.querySelector('.spot-photo');
   photo.src = `images/spots/${spot.id}-large.webp`;

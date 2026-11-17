@@ -1,5 +1,5 @@
 services:
-  vaga:
+  onda:
     build: .
     init: true
     ports:

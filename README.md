@@ -1,6 +1,6 @@
-# Vaga — live surf conditions for the Portuguese coast
+# Onda — live surf conditions for the Portuguese coast
 
-Vaga ("wave" in Portuguese) is a static website that tells surfers what the sea is doing right now, and what it will do over the next seven days, at eight surf spots between Porto and Sagres.
+Onda is a static website that tells surfers what the sea is doing right now, and what it will do over the next seven days, at eight surf spots between Porto and Sagres.
 
 - **Home page.** One card per spot with its live wave height, wave period, wind and a rating from Flat to Epic. The spots can be filtered by region and sorted by the biggest waves or the best conditions. A short guide explains how to read the numbers.
 - **Spot page.** The story of the spot, a compass with the swell and the wind against the direction the beach faces, and a seven-day chart. Dragging along the chart (or using the arrow keys) changes every number on the page, the compass and the animated sea. A spot can be saved, and the browser remembers it.
@@ -9,7 +9,7 @@ Watch `SEEME.webm` for a one-minute tour.
 
 ## Where the data comes from
 
-| Source | What Vaga takes from it |
+| Source | What Onda takes from it |
 | --- | --- |
 | [`data/spots.json`](data/spots.json) (static content of this repository) | The spots: name, coordinates, the direction the beach faces, description and photo credit |
 | [Open-Meteo Marine API](https://open-meteo.com/en/docs/marine-weather-api) | Hourly wave height, period, direction and water temperature |
@@ -17,7 +17,7 @@ Watch `SEEME.webm` for a one-minute tour.
 
 Both APIs are public, need no key and are called with `fetch`. They accept several places in one request, so the home page loads all eight spots with two requests.
 
-The rating is Vaga's own: it adds points for a long wave period and for wind that blows from the land (offshore), which is worked out from the direction each beach faces. It is a rough guide, not a safety warning.
+The rating is Onda's own: it adds points for a long wave period and for wind that blows from the land (offshore), which is worked out from the direction each beach faces. It is a rough guide, not a safety warning.
 
 ## How it meets the requirements
 
@@ -45,7 +45,7 @@ docker compose up --build
 
 Then open <http://localhost:3000>, and stop it with `Ctrl+C`.
 
-Without Compose: `docker build -t vaga .` and `docker run --rm -p 3000:3000 vaga`.
+Without Compose: `docker build -t onda .` and `docker run --rm -p 3000:3000 onda`.
 
 The server and the container are only for local testing. The published website is served by GitHub Pages.
 
