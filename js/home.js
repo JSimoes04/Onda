@@ -18,6 +18,7 @@ async function main() {
   try {
     const spots = await fetchSpots();
     list.append(...spots.map(createCard));
+    document.getElementById(location.hash.slice(1))?.scrollIntoView();
 
     const forecasts = await fetchForecasts(spots, 1);
     spots.forEach((spot, i) => showConditions(spot, currentHour(forecasts[i])));
@@ -58,7 +59,6 @@ function showBiggest(spot) {
   highlight.href = spot.card.querySelector('.spot-link').href;
   highlight.querySelector('.highlight-name').textContent = spot.name;
   highlight.querySelector('.highlight-waves').textContent = `${spot.now.waveHeight.toFixed(1)} m`;
-  highlight.hidden = false;
 
   stirSea(document.querySelector('.sea'), spot.now);
 }
